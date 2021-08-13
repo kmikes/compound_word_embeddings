@@ -71,23 +71,30 @@ Once downloaded there are two easy ways to process the vectors:
 1. Manual Vector Extraction: Create a dictionary and process words/strings as keys and their embeddings as values. This approach may be helped by eliminating non-words before they are added to the dictionary.
 2. TorchText Extraction: Use <a target="_blank" href="https://torchtext.readthedocs.io/en/latest/">torchtext</a> to create a vocab to hold the words and their embeddings. Using torchtext allows you to filter the dataset by word frequency when finding nearest embeddings.
 
+
 Data Analysis Notes
 ------------
 1. The GloVe vectors have components mostly in the range [-5, 5] -- though some enbeddings have components as large as ±100
 2. To produce comparable vectors from the output of the model, you need to use an activation that is not bounded on (0,1) -- eg, Linear
+
 
 Environment Notes
 ------------
 
 The conda environment in `keras_conda_environment.yml` is able to run the keras model, `1.0-dense-layer-model.py`
 
-To run the lstm models(`2.0-bidirectional-lstm-model.py` and `3.0-lstm-model.py`), you need a different environment `tflearn_conda_environment.yml`
+To run the lstm models (`2.0-bidirectional-lstm-model.py` and `3.0-lstm-model.py`), you need to use the conda environment `tflearn_conda_environment.yml`
+
 
 Next Steps & Research Ideas
 ------------
+Better Models - a more complex and customized model would likely perform better than the ones that we've previously done. We were not able to create an lstm model in keras, so maybe that could be explored.
+
+Further Examination of Embeddings - the embeddings for the compound words may have important similarities to each other that could be found through more analysis. If these embeddings have certain things in common, could they be exploited to make a more effective neural network?
 
 
-Reaching Out
+Contact Us
 ------------
+Feel free to reach out to us on github if you decide to pick this project up!
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
