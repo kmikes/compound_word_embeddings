@@ -60,12 +60,12 @@ Tips for LaDEC
 ------------
 It is important to note two things about LaDEC:
 1. Not all of the compound words included in the dataset have embeddings in GloVe, so these words must be filtered out before the data is run through any Neural Networks.
-2. Not all of the compounds in LaDEC are 'correct parses' of their constituent words. LaDEC, for example, includes the word: 'wholesale' twice, once with constituents 'whole' and 'sale' and once with constituents 'wholes' and 'ales'. To avoid this, all incorrect parses should also be filtered out.
+2. Not all of the compounds in LaDEC are 'correct parses' of their constituent words. LaDEC, for example, includes the word: 'wholesale' twice, once with constituents 'whole' and 'sale' and once with constituents 'wholes' and 'ale'. To avoid this, all incorrect parses should also be filtered out.
 
 
 Tips for GloVe
 ------------
-We reccomend starting by downloading the 50d GloVe vectors, and only moving to larger vectors once the 50d vectors are easy to use and manipulate.
+We recommend starting by downloading the 50d GloVe vectors, and only moving to larger vectors once the 50d vectors are easy to use and manipulate.
 
 Once downloaded there are two easy ways to process the vectors:
 1. Manual Vector Extraction: Create a dictionary and process words/strings as keys and their embeddings as values. This approach may be helped by eliminating non-words before they are added to the dictionary.
