@@ -73,7 +73,7 @@ Once downloaded there are two easy ways to process the vectors:
 
 Data Analysis Notes
 ------------
-1. The GloVe vectors have components mostly in the range [-5, 5] -- though some words have components as large as ±100
+1. The GloVe vectors have components mostly in the range [-5, 5] -- though some enbeddings have components as large as ±100
 2. To produce comparable vectors from the output of the model, you need to use an activation that is not bounded on (0,1) -- eg, Linear
 
 
