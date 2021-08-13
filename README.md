@@ -71,6 +71,11 @@ Once downloaded there are two easy ways to process the vectors:
 1. Manual Vector Extraction: Create a dictionary and process words/strings as keys and their embeddings as values. This approach may be helped by eliminating non-words before they are added to the dictionary.
 2. TorchText Extraction: Use <a target="_blank" href="https://torchtext.readthedocs.io/en/latest/">torchtext</a> to create a vocab to hold the words and their embeddings. Using torchtext allows you to filter the dataset by word frequency when finding nearest embeddings.
 
+Data Analysis Notes
+------------
+1. The GloVe vectors have components mostly in the range [-5, 5] -- though some words have components as large as ±100
+2. To produce comparable vectors from the output of the model, you need to use an activation that is not bounded on (0,1) -- eg, Linear
+
 
 Next Steps & Research Ideas
 ------------
