@@ -1,4 +1,4 @@
-name: pythonProject
+name: compound_word_embeddings
 channels:
   - conda-forge
   - pytorch
