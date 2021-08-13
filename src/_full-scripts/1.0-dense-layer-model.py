@@ -17,7 +17,7 @@ dims = 50
 drop = 0.1
 
 # Load Data
-data = pd.read_csv('NoteBooks/data/all_embeddings_forML.csv')
+data = pd.read_csv('data/processed/all_embeddings_forML.csv')
 
 voc = np.unique( data[ ['c1', 'c2', 'cmp'] ].values.reshape(-1) )
 # print( voc.shape )
@@ -69,11 +69,6 @@ rows_test = rows - rows_train
 ## y_train = shape=(None,dims) tensor
 X_train, X_test = tf.split(X, num_or_size_splits=[rows_train, rows_test])
 y_train, y_test = tf.split(y, num_or_size_splits=[rows_train, rows_test])
-
-#path_to_glove_file = os.path.join(
-#    os.path.expanduser("~"), "PycharmProjects/pythonProject/NoteBooks/data/glove.6B.%d.txt" % dims
-#)
-
 
 # Build Model
 from tensorflow.keras import layers
