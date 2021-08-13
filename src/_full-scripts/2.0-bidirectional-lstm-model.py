@@ -27,7 +27,7 @@ from scipy import spatial
 from tensorflow import keras
 
 # Load Data
-data = pd.read_csv('NoteBooks/data/all_embeddings_forML.csv')
+data = pd.read_csv('data/processed/all_embeddings_forML.csv')
 
 voc = np.unique( data[ ['c1', 'c2', 'cmp'] ].values.reshape(-1) )
 # print( voc.shape )
