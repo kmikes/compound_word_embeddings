@@ -79,9 +79,9 @@ Data Analysis Notes
 Environment Notes
 ------------
 
-The conda environment in `conda_environment.yml` is able to run the keras model, `1.0-dense-layer-model.py`
+The conda environment in `keras_conda_environment.yml` is able to run the keras model, `1.0-dense-layer-model.py`
 
-To run the lstm models, you need a different environment (tflearn) which is not yet uploaded.
+To run the lstm models(`2.0-bidirectional-lstm-model.py` and `3.0-lstm-model.py`), you need a different environment `tflearn_conda_environment.yml`
 
 Next Steps & Research Ideas
 ------------
