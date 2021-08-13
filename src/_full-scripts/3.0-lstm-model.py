@@ -8,7 +8,7 @@ from numpy import random
 
 
 # Load Data
-data = pd.read_csv('NoteBooks/data/all_embeddings_forML.csv')
+data = pd.read_csv('data/processed/all_embeddings_forML.csv')
 
 voc = np.unique(data[['c1', 'c2', 'cmp']].values.reshape(-1))
 
@@ -24,7 +24,7 @@ df = df.sample(frac=1).reset_index(drop=True)
 # EMBEDDINGS DICT
 embeddings_dict = {}
 
-with open("NoteBooks/data/glove.6B.50d.txt", 'r') as f:
+with open("data/processed/glove.6B.50d.txt", 'r') as f:
     for line in f:
         values = line.split()
         word = values[0]
