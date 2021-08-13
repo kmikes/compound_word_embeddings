@@ -1,0 +1,3 @@
+21bf566a9d27f84d253e0cd4d4be9dcc07976a6d  data/external/glove.6B.50d.txt
+b64e54f1877d2f735bdd000c1d7d771e25c7dfdc  data/external/glove.6B.zip
+d04b146c29acb459eac2a0a74097de332d96294f  data/external/ladec.csv
