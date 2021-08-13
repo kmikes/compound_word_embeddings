@@ -1,4 +1,4 @@
-name: compound_word_embeddings
+name: compound_word_embeddings_keras
 channels:
   - conda-forge
   - pytorch
