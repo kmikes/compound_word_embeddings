@@ -60,7 +60,7 @@ Tips for LaDEC
 ------------
 It is important to note two things about LaDEC:
 1. Not all of the compound words included in the dataset have embeddings in GloVe, so these words must be filtered out before the data is run through any Neural Networks.
-2. Not all of the compounds in LaDEC are 'correct parses' of their constituent words. LaDEC, for example, includes the<br />word: 'wholesale' twice, once with constituents 'whole' and 'sale' and once with constituents 'wholes' and 'ales'. To avoid this, all incorrect parses should also be filtered out.
+2. Not all of the compounds in LaDEC are 'correct parses' of their constituent words. LaDEC, for example, includes the word: 'wholesale' twice, once with constituents 'whole' and 'sale' and once with constituents 'wholes' and 'ales'. To avoid this, all incorrect parses should also be filtered out.
 
 
 Tips for GloVe
