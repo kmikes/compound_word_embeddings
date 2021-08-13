@@ -76,6 +76,12 @@ Data Analysis Notes
 1. The GloVe vectors have components mostly in the range [-5, 5] -- though some enbeddings have components as large as ±100
 2. To produce comparable vectors from the output of the model, you need to use an activation that is not bounded on (0,1) -- eg, Linear
 
+Environment Notes
+------------
+
+The conda environment in `conda_environment.yml` is able to run the keras model, `1.0-dense-layer-model.py`
+
+To run the lstm models, you need a different environment (tflearn) which is not yet uploaded.
 
 Next Steps & Research Ideas
 ------------
