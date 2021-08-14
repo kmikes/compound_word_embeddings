@@ -24,7 +24,7 @@ df = df.sample(frac=1).reset_index(drop=True)
 # EMBEDDINGS DICT
 embeddings_dict = {}
 
-with open("data/processed/glove.6B.50d.txt", 'r') as f:
+with open("data/external/glove.6B.50d.txt", 'r') as f:
     for line in f:
         values = line.split()
         word = values[0]
