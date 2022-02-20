@@ -17,7 +17,7 @@ dims = 50
 drop = 0.1
 
 # Load Data
-data = pd.read_csv('data/processed/all_embeddings_forML.csv')
+data = pd.read_csv('../../data/processed/all_embeddings_forML.csv')
 
 voc = np.unique( data[ ['c1', 'c2', 'cmp'] ].values.reshape(-1) )
 # print( voc.shape )
