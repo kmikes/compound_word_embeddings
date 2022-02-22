@@ -72,14 +72,14 @@ trainY =  df.iloc[:int((0.8*(len(data['c1'])))), 104:154]
 testX = df.iloc[int((0.8*(len(data['c1'])))):, 4:104]
 testY =  df.iloc[int((0.8*(len(data['c1'])))):, 104:154]
 
-'''
+
 print('')
 print( 'trainX', trainX.shape )
-print( 'trainY', trainY.shape)
+print( 'trainY', trainY.shape )
 print( 'testX', testX.shape )
 print( 'testY', testY.shape )
 print('')
-'''
+
 
 
 # Network building
@@ -96,13 +96,13 @@ model = keras.Sequential(
     ]
 )
 
-'''
+
 foo = testX
 bar = model(foo)
 print("Number of weights after calling the model:", len(model.weights))  # 5
 
 model.summary()
-'''
+
 
 # Training
 model.compile(loss="mean_squared_error", optimizer="Adam", metrics=["acc"])
@@ -128,7 +128,7 @@ for i in range(samples):
     print( df.loc[rows_test+i,['c1', 'c2', 'cmp']], find_closest_embeddings(vocab, predictions[i])[:5] )
 print('')
 
-# '''
+'''
 print('')
 for i in range(samples):
     print('True Embedding:')
@@ -137,4 +137,4 @@ for i in range(samples):
     print('Predicted Embedding:')
     print( predictions[i] )
     print('')
-# '''
+ '''
