@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 from tensorflow import keras
+from keras import backend as K
 
 import torchtext
 import os
@@ -14,10 +15,10 @@ import torch.nn as nn
 from torch.optim import Adam
 
 dims = 50
-drop = 0.1
+drop = 0.05
 
 # Load Data
-data = pd.read_csv('data/processed/all_embeddings_forML.csv')
+data = pd.read_csv('../../data/processed/all_embeddings_forML.csv')
 
 voc = np.unique( data[ ['c1', 'c2', 'cmp'] ].values.reshape(-1) )
 # print( voc.shape )
@@ -80,19 +81,20 @@ input_shape = (2*dims)
 input = keras.Input(shape=input_shape, dtype="float64")
 
 x = layers.Dense(128, activation='relu')(input)
-x = layers.Dense(256, activation='linear')(x)
-#x = layers.Dense(256, activation='relu')(x)
+x = layers.Dense(128, activation='relu')(x)
+x = layers.Dense(256, activation='relu')(x)
 x = layers.Dropout(drop)(x)
 
 x = layers.Dense(512, activation='relu')(x)
 #x = layers.Dense(512, activation='linear')(x)
 x = layers.Dropout(drop)(x)
 
-x = layers.Dense(1024, activation='linear')(x)
-x = layers.Dense(1024, activation='linear')(x)
+x = layers.Dense(1024, activation='relu')(x)
+x = layers.Dense(1024, activation='relu')(x)
 x = layers.Dropout(drop)(x)
 
-x = layers.Dense(1024, activation='linear')(x)
+x = layers.Dense(1024, activation='relu')(x)
+x = layers.Dense(1024, activity_regularizer='l1')(x)
 x = layers.BatchNormalization()(x)
 x = layers.Dropout(drop)(x)
 x = layers.Dense(dims, activation='linear')(x)
@@ -106,9 +108,10 @@ model.summary()
 
 # Train Model
 model.compile(
-    loss="cosine_similarity", optimizer="Adam", metrics=["acc"]
+    loss="cosine_similarity", optimizer="Adam", metrics=["mse", "acc"]
 )
-model.fit(X_train, y_train, batch_size=16, epochs=20, validation_split=0.25)
+K.set_value(model.optimizer.learning_rate, 0.001)
+model.fit(X_train, y_train, batch_size=8, epochs=80, validation_split=0.25) # batch_size and epochs
 
 result = model.evaluate(X_test, y_test)
 print("test loss, test acc:", result)
